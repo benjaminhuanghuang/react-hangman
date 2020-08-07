@@ -7,7 +7,7 @@ const WrongLetters = ({ wrongLetters }) => {
         {wrongLetters.length > 0 && <p>Wrong</p>}
         {wrongLetters
           .map((letter, i) => <span key={i}>{letter}</span>)
-          .reduce((prev, curr) => (prev === null ? [curr] : [prev, ", ", curr]), null)}
+          .reduce((accum, curr) => (accum === null ? [curr] : [...accum, ", ", curr]), null)}
       </div>
     </div>
   );
